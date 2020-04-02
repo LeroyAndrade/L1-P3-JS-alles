@@ -7,6 +7,8 @@ function OBJpersoon (achternaam,tussenvoegsel,voornaam){
 }
 
 let student = new OBJpersoon ("Andrade ",""," Leroy");
+//typeof(student.Studentnummer);
+
 
 let forIn="";
 for (const property in student) {
@@ -47,6 +49,7 @@ let voertuig1 = new bluePrintVoertuig("Ferrari", 'ENZO', '1,480 kg', '6L V12', '
 for (const property in voertuig1) {
 forIn3+=(`${property}: ${voertuig1[property]}`+'<br/>');
 }document.write('<br/>'+"Opgave 3" +'<br>'+forIn3);
+
 //Opgave III.I
 let forIn31="";
 let voertuig2 = new bluePrintVoertuig("theFuture", 'Grande', '1,481 kg', '33L V12 + Efficiënt appart Hybrid en Energy Recovery System tijdens remmen', 'Groen');
@@ -55,16 +58,24 @@ forIn31+=(`${property}: ${voertuig1[property]}`+'<br/>');
 }document.write('<br/>'+"Opgave 3.1" +'<br>'+forIn31);
 
 
-//Opgave IIII
+//Opgave IV
+function OBJStudent (studentnummer,naam,klasnaam,opleiding){
+  let newStudent = this;
+  newStudent.Studentnummer = studentnummer;
+  newStudent.Naam = naam;
+  newStudent.Klasnaam = klasnaam;
+  newStudent.Opleiding = opleiding;
+}
 
-//let boek = new OBJBoek ("");
+let student2 = new OBJStudent (123,"Pietje Puk","MD1A", "Mediadevelopment");
+let student3 = new OBJStudent (1234,"Pietje Puki","MD1B", "Mediadevelopment");
+/*foreach item, lukt mij niet op het moment*/
+let student2Arr = [student2.Studentnummer,student2.Naam,student2.Klasnaam,student2.Opleiding, '<br>'];
+let student3Arr = [student3.Studentnummer,student3.Naam,student3.Klasnaam,student3.Opleiding];
 
-
-
-
-
-
-
+let storeArr = student2Arr.concat(student3Arr);
+//document.write('<br/>'+"Opgave 4"+'<br/>');
+document.write('<br/>'+"Opgave 3.1"+'<br/>'+ storeArr);
 
 
 //let boek = new OBJBoek ("");
