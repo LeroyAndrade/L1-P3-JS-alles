@@ -75,7 +75,7 @@ let student3Arr = [student3.Studentnummer+student3.Naam,student3.Klasnaam,studen
 
 let storeArr = student2Arr.concat(student3Arr);
 //document.write('<br/>'+"Opgave 4"+'<br/>');
-document.write('<br/>'+"Opgave 3.1"+'<br/>'+storeArr);
+document.write('<br/>'+"Opgave 4"+'<br/>'+storeArr);
 
 
 
