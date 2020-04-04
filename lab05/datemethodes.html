@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf8">
+     <meta name="author" content="Leroy Andrade">
+     <meta name="content" content="FRO periode 3">
+     <meta name="description" content="Periode 3 leerjaar 1">
+     <meta name="keywords" content="Fro, Front, Fron-end, Frontend, frontend, front-end,front end, End, front">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Datemethodes</title>
+
+
+</head>
+<body>
+    <h2>datemethodes</h2>
+   <script type="text/javascript">
+       var vandaag = new Date();
+       document.write("<br />Vandaag is: " + vandaag);
+
+       var maanden = new Array('januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december');
+       var weekdag = new Array('zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag')
+
+       document.write("<br />Vandaag is: "
+           + weekdag[vandaag.getDay()] +
+           ' ' + vandaag.getDate() +
+           ' ' + maanden[vandaag.getMonth()] +
+           ' ' + vandaag.getFullYear());
+
+           /*dit script: werkt met het Date Object
+           auteur: typ je eigen naam hier
+            -->
+
+        <!--
+            Pas het bestand aan volgens de codestandaarden
+        -->
+        <!--
+            Zoek minimaal 5 andere date methods op en laat het resultaat van deze
+            methods zien op het scherm.
+      */
+
+document.write('<br/>'+'<br/>'+'Code van Leroy Andrade');
+let getTijd = new Date();
+
+    let Tijdzone = getTijd.getTimezoneOffset().value = (120) ? "GMT+00" + (getTijd.getTimezoneOffset()+120) + "Midden-Europese standaardtijd" : "tijdstip niet Europees";
+
+    let datum = weekdag[getTijd.getDay()] + " " + maanden[getTijd.getMonth()] + " " + getTijd.getDate() + " " + getTijd.getFullYear() + " " + getTijd.getHours() + ":" + getTijd.getMinutes() + ":" + getTijd.getSeconds()
+      + " "
+      + "GMT+00" + (getTijd.getTimezoneOffset()+122);
+
+    /*
+      Switch statement met TimezoneOffset naar Continentdeel
+    */
+
+    //tijd, uur minuten sec,  GMT+1 Europa
+
+/*7 methodes in  plaats van de gevraagde vijf*/
+     document.write('<br>'+weekdag[getTijd.getDay()] + " " + maanden[getTijd.getMonth()] + " " + getTijd.getDate() + " " + getTijd.getFullYear() + " " + getTijd.getHours() + ":" + getTijd.getMinutes() + ":" + getTijd.getSeconds()
+      + " "
+      + "GMT+00" + (getTijd.getTimezoneOffset()+122))
+
+   	</script>
+</body>
+</html>
