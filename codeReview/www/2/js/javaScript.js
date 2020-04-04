@@ -12,12 +12,13 @@ for(let i=0; i< buttonConst.length; i++){
   buttonConst[i].style.background = "green";
 
   //wanneer je klikt op 'een' button, wanneer achtergrond groen is, maak rood en vice-versa
-  buttonConst[i].style.background = "green";
+  let clickRegister =-0;
   buttonConst[i].addEventListener('click', function (e){
   //  console.log(e);
 
-let numr= this.dataset.info;
+ let numr= this.dataset.info;
 if (numr === "1" || numr === "2" || numr === "3" || numr === "4" || numr === "5"){
+
 //console.log(numr);
     /*
       wanneer ik klik op button, wanneer groen, dan reserveer je, haal tijd op
@@ -25,21 +26,29 @@ if (numr === "1" || numr === "2" || numr === "3" || numr === "4" || numr === "5"
       wanneer tijd >5, dan kamer vrijgeven, verander kleur
       anders error msg ->exit
       */
-      if (buttonConst[i].style.background === "green"){
-          k1=getTijd();
-          storeTijd1+=1;
-          buttonConst[i].style.background === "red";
-          console.log('gereserveerd');
-        }
-        tijdTotaal = (storeTijd2-storeTijd1);
-      if (buttonConst[i].style.background === "red" && tijdTotaal < 5000){
-          k2=getTijd();
-          storeTijd2=1;
+clickRegister+=1;
 
-      }
-        if (tijdTotaal ===2){
-            console.log('u mag weer reserveren');
-        }else   console.log('Kamer wordt onderhouden, wacht nog 5 secondes');
+if (clickRegister===1){
+k1=getTijd();
+    console.log('U heeft gereserveerd.');
+    buttonConst[i].style.background = "red";
+}
+//wacht 6 secondes na de aller eerste klik om de melding te krijgen dat kamer nog niet te boeken is
+// klik 3 maar binnen 4.9 secondes om de kamer opnieuw te boeken.
+
+//F5 pagina voor nieuw boeking
+if (clickRegister===2){
+k2=getTijd();
+    console.log('U bent uitgecheckt');
+}
+if (clickRegister===3){
+tijdTotaal = (k2-k1);
+  if (tijdTotaal< 5000){
+    clickRegister=-0;
+    console.log('u mag reserveren');
+      buttonConst[i].style.background = "green";
+  }else {    console.log('Kamer nog niet reserveerbaar');}
+}
       }
   });
 }
