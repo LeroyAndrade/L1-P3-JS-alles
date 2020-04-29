@@ -37,7 +37,7 @@ const allImages = [
       './splash/16.jpg',
       './splash/17.jpg',
       './splash/18.jpg',
-      './splash/19.jpg',
+      './splash/19.jpg', rr
       './splash/20.jpg'*/
 const id = document.getElementById('gallery');
 
